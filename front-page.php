@@ -1,0 +1,9 @@
+<?php get_header(); ?>
+<?php get_template_part('template-parts/hero'); ?>
+<?php get_template_part('template-parts/servicos'); ?>
+<?php get_template_part('template-parts/produtos'); ?>
+<?php get_template_part('template-parts/diferenciais'); ?>
+<?php get_template_part('template-parts/depoimentos'); ?>
+<?php get_template_part('template-parts/cta'); ?>
+<?php get_template_part('template-parts/contato'); ?>
+<?php get_footer(); ?>
