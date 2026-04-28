@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 33% 4%;
+    --foreground: 30 14% 92%;
+    --card: 210 33% 4%;
+    --card-foreground: 30 14% 92%;
+    --popover: 210 33% 4%;
+    --popover-foreground: 30 14% 92%;
+    --primary: 350 72% 44%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 10% 12%;
+    --secondary-foreground: 30 14% 92%;
+    --muted: 210 10% 12%;
+    --muted-foreground: 240 5% 55%;
+    --accent: 210 10% 12%;
+    --accent-foreground: 30 14% 92%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 10% 15%;
+    --input: 210 10% 15%;
+    --ring: 350 72% 44%;
+    --radius: 0.625rem;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    font-family: 'Noto Sans SC', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #050A0F;
+    color: #EDE8E4;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    word-break: keep-all;
+  }
+}
+
+@layer components {
+  .font-serif-display {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+  }
+
+  .font-sans-body {
+    font-family: 'Noto Sans SC', 'Helvetica Neue', Arial, sans-serif;
+  }
+}
+
+/* Global responsive utilities */
+@media (max-width: 1024px) {
+  #gallery > section > div:last-child > div {
+    margin-top: 40px !important;
+    padding-left: 5vw !important;
+    padding-right: 5vw !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #gallery > section > div:last-child > div {
+    margin-top: 40px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    justify-content: center !important;
+  }
+
+  #gallery > section > div:last-child > div > div {
+    width: 90vw !important;
+    max-width: 400px !important;
+  }
+
+  #contact > div:last-child {
+    grid-template-columns: 1fr !important;
+    gap: 60px !important;
+  }
+
+  #contact form > div {
+    grid-template-columns: 1fr !important;
+  }
+
+  #mediums > section {
+    flex-direction: column !important;
+    padding: 80px 6vw !important;
+    gap: 40px !important;
+  }
+
+  #mediums > section > div:first-child {
+    flex: none !important;
+  }
+
+  #mediums > section > div:last-child {
+    min-height: 200px !important;
+  }
+}
+
+/* Smooth scroll for Lenis */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
