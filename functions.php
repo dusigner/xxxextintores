@@ -9,7 +9,7 @@ function xxxextintores_setup(): void
     add_theme_support('post-thumbnails');
     add_theme_support('custom-logo', [
         'height'      => 80,
-        'width'       => 240,
+        'width'       => 260,
         'flex-width'  => true,
         'flex-height' => true,
     ]);
@@ -30,7 +30,14 @@ function xxxextintores_scripts(): void
 {
     $theme_version = wp_get_theme()->get('Version');
 
-    wp_enqueue_style('xxxextintores-style', get_stylesheet_uri(), [], $theme_version);
+    wp_enqueue_style(
+        'xxxextintores-fonts',
+        'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;500;700&display=swap',
+        [],
+        null
+    );
+
+    wp_enqueue_style('xxxextintores-style', get_stylesheet_uri(), ['xxxextintores-fonts'], $theme_version);
     wp_enqueue_style('xxxextintores-main', get_template_directory_uri() . '/assets/css/main.css', ['xxxextintores-style'], $theme_version);
     wp_enqueue_style('xxxextintores-woocommerce', get_template_directory_uri() . '/assets/css/woocommerce.css', ['xxxextintores-main'], $theme_version);
 
